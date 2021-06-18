@@ -6,3 +6,16 @@
     color: #545454;
     padding: 66px 0 60px;
 }
+
+@media screen and (max-width: 932px) {
+    .footer__copyright {
+        padding: 48px 19px 36px;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .footer__copyright {
+        font-size: 14px;
+        line-height: 17px;
+    }    
+}

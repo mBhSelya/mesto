@@ -1,4 +1,16 @@
 .header {
     border-bottom: 1px solid #545454;
-    padding: 40px 0 0;
+    padding: 45px 0 0;
+}
+
+@media screen and (max-width: 932px) {
+    .header {
+        
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .header {
+        padding: 28px 0 0;
+    }    
 }

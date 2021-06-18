@@ -4,3 +4,16 @@
     justify-content: space-between;
     align-items: center;
 }
+
+@media screen and (max-width: 932px) {
+    .profile {
+        padding: 0 19px;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .profile {
+        flex-direction: column;
+        margin: 42px auto 36px;
+    }    
+}
