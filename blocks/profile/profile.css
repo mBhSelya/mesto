@@ -3,6 +3,8 @@
     margin: 40px auto 50px;
     justify-content: space-between;
     align-items: center;
+    transition-duration: .3s;
+    transition-timing-function: ease;
 }
 
 @media screen and (max-width: 932px) {

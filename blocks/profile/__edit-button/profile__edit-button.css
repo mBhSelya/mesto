@@ -8,6 +8,13 @@
     background-repeat: no-repeat;
     background-position: center;
     margin: 0 0 0 18px;
+    transition-duration: .3s;
+    transition-timing-function: ease;
+    cursor: pointer;
+}
+
+.profile__edit-button:hover {
+    opacity: 0.6;
 }
 
 @media screen and (max-width: 720px) {

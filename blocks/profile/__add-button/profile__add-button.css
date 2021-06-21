@@ -8,6 +8,13 @@
     background-image: url(../../../images/plus.svg);
     background-repeat: no-repeat;
     background-position: center;
+    transition-duration: .3s;
+    transition-timing-function: ease;
+    cursor: pointer;
+}
+
+.profile__add-button:hover {
+    opacity: 0.6;
 }
 
 @media screen and (max-width: 720px) {

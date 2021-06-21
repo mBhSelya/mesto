@@ -17,7 +17,10 @@
                 <div class="profile__data">
                     <img class="profile__avatar" src="./images/Avatar.jpg" alt="Аватар">
                     <div class="profile__info">
-                        <h1 class="profile__name">Жак-Ив Кусто<button class="profile__edit-button"></button></h1>
+                        <div class="profile__title">
+                            <h1 class="profile__name">Жак-Ив Кусто</h1>
+                            <button class="profile__edit-button"></button>
+                        </div>
                         <p class="profile__description">Исследователь океана</p>
                     </div>
                 </div>
@@ -28,42 +31,42 @@
                     <img class="element__image" src="./images/kirill-pershin-1088404-unsplash.jpg" alt="Фотография Карачаевска">
                     <div class="element__info">
                         <p class="element__title">Карачаевск</p>
-                        <img src="./images/Vector (Stroke).svg" alt="Лайк, Сердечко">
+                        <img class="element__like" src="./images/Vector (Stroke).svg" alt="Лайк, Сердечко">
                     </div>
                 </div>
                 <div class="element">
                     <img class="element__image" src="./images/kirill-pershin-1404681-unsplash.jpg" alt="Фотография Карачаевска">
                     <div class="element__info">
                         <p class="element__title">Гора Эльбрус</p>
-                        <img src="./images/Vector (Stroke).svg" alt="Лайк, Сердечко">
+                        <img class="element__like" src="./images/Vector (Stroke).svg" alt="Лайк, Сердечко">
                     </div>
                 </div>
                 <div class="element">
                     <img class="element__image" src="./images/kirill-pershin-1556355-unsplash.jpg" alt="Фотография Карачаевска">
                     <div class="element__info">
                         <p class="element__title">Домбай</p>
-                        <img src="./images/Vector (Stroke).svg" alt="Лайк, Сердечко">
+                        <img class="element__like" src="./images/Vector (Stroke).svg" alt="Лайк, Сердечко">
                     </div>
                 </div>
                 <div class="element">
                     <img class="element__image" src="./images/kirill-pershin-1404681-unsplash.jpg" alt="Фотография Карачаевска">
                     <div class="element__info">
                         <p class="element__title">Гора Эльбрус</p>
-                        <img src="./images/Vector (Stroke).svg" alt="Лайк, Сердечко">
+                        <img class="element__like" src="./images/Vector (Stroke).svg" alt="Лайк, Сердечко">
                     </div>
                 </div>
                 <div class="element">
                     <img class="element__image" src="./images/kirill-pershin-1556355-unsplash.jpg" alt="Фотография Карачаевска">
                     <div class="element__info">
                         <p class="element__title">Домбай</p>
-                        <img src="./images/Vector (Stroke).svg" alt="Лайк, Сердечко">
+                        <img class="element__like" src="./images/Vector (Stroke).svg" alt="Лайк, Сердечко">
                     </div>
                 </div>
                 <div class="element">
                     <img class="element__image" src="./images/kirill-pershin-1088404-unsplash.jpg" alt="Фотография Карачаевска">
                     <div class="element__info">
                         <p class="element__title">Карачаево-Черкессия</p>
-                        <img src="./images/Vector (Stroke).svg" alt="Лайк, Сердечко">
+                        <img class="element__like" src="./images/Vector (Stroke).svg" alt="Лайк, Сердечко">
                     </div>
                 </div>
             </section>
@@ -71,6 +74,16 @@
         <footer>
             <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
         </footer>
+        <section class="popup">
+            <form class="popup__container">
+                <img class="popup__button-close" src="./images/plus.svg" alt="">
+                <h2 class="popup__title">Редактировать профиль</h2>
+                <input class="popup__input-name" type="text">
+                <input class="popup__input-description" type="text">
+                <button type="submit" class="popup__button-save">Сохранить</button>
+            </form>
+        </section>
     </div>
+    <script src="./script.js"></script> 
 </body>
 </html>

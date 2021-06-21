@@ -1,0 +1,23 @@
+.popup__button-close {
+    position: absolute;
+    top: -38px;
+    right: -38px;
+    width: 40px;
+    transform: rotate(-45deg);
+    transition-duration: .3s;
+    transition-timing-function: ease;
+    cursor: pointer;
+}
+
+.popup__button-close:hover {
+    opacity: 0.6;
+}
+
+
+@media screen and (max-width: 720px) {
+    .popup__button-close {
+        top: -50px;
+        right: 0;
+        width: 26px;
+    }    
+}
