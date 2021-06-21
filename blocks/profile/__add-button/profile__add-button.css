@@ -11,6 +11,7 @@
     transition-duration: .3s;
     transition-timing-function: ease;
     cursor: pointer;
+    padding: 0;
 }
 
 .profile__add-button:hover {

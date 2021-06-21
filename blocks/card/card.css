@@ -2,4 +2,6 @@
     max-width: 100%;
     border-radius: 10px;
     background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
 }

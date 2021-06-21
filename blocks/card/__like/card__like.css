@@ -3,7 +3,6 @@
     transition-duration: .3s;
     cursor: pointer;
     background-image: url(../../../images/LIKE.svg);
-    background-size: cover;
     border: 0;
     width: 22px;
     height: 19px;
