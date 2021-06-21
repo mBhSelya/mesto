@@ -10,8 +10,16 @@
     transition-duration: .3s;
     transition-timing-function: ease;
     cursor: pointer;
+    border: 0;
+    margin: 18px 0 0;
 }
 
 .popup__button-save:hover {
     opacity: 0.8;
+}
+
+@media screen and (max-width: 720px) {
+    .popup__button-save {
+        margin: 15px 0 0;
+    }    
 }

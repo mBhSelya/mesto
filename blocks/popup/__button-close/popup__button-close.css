@@ -1,8 +1,13 @@
 .popup__button-close {
+    border: 0;
+    background-image: url(../../../images/plus.svg);
+    background-size: cover;
+    background-color: initial;
     position: absolute;
     top: -38px;
     right: -38px;
     width: 40px;
+    height: 40px;
     transform: rotate(-45deg);
     transition-duration: .3s;
     transition-timing-function: ease;
@@ -19,5 +24,6 @@
         top: -50px;
         right: 0;
         width: 26px;
+        height: 26px;
     }    
 }

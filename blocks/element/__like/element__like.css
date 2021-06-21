@@ -1,9 +1,0 @@
-.element__like {
-    transition-timing-function: ease;
-    transition-duration: .3s;
-    cursor: pointer;
-}
-
-.element__like:hover {
-    opacity: 0.5;
-}

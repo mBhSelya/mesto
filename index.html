@@ -10,7 +10,7 @@
 <body class="background">
     <div class="page">
         <header class="header">
-            <img class="header__logo" src="./images/logo.svg" alt="Логотип Mesto">
+            <a class="header__logo" href="#"></a>
         </header>
         <main>
             <section class="profile">
@@ -19,71 +19,71 @@
                     <div class="profile__info">
                         <div class="profile__title">
                             <h1 class="profile__name">Жак-Ив Кусто</h1>
-                            <button class="profile__edit-button"></button>
+                            <button class="profile__edit-button" aria-label="Изменить профиль"></button>
                         </div>
                         <p class="profile__description">Исследователь океана</p>
                     </div>
                 </div>
-                <button class="profile__add-button"></button>
+                <button class="profile__add-button" aria-label="Добавить"></button>
             </section>
-            <section class="elements">
-                <div class="element">
-                    <img class="element__image" src="./images/kirill-pershin-1088404-unsplash.jpg" alt="Фотография Карачаевска">
-                    <div class="element__info">
-                        <p class="element__title">Карачаевск</p>
-                        <img class="element__like" src="./images/Vector(Stroke).svg" alt="Лайк, Сердечко">
+            <section class="cards">
+                <article class="card">
+                    <img class="card__image" src="./images/kirill-pershin-1088404-unsplash.jpg" alt="Фотография Карачаевска">
+                    <div class="card__info">
+                        <h2 class="card__title">Карачаевск</h2>
+                        <button class="card__like" aria-label="Лайк"></button>
                     </div>
-                </div>
-                <div class="element">
-                    <img class="element__image" src="./images/kirill-pershin-1404681-unsplash.jpg" alt="Фотография Карачаевска">
-                    <div class="element__info">
-                        <p class="element__title">Гора Эльбрус</p>
-                        <img class="element__like" src="./images/Vector(Stroke).svg" alt="Лайк, Сердечко">
+                </article>
+                <article class="card">
+                    <img class="card__image" src="./images/kirill-pershin-1404681-unsplash.jpg" alt="Фотография Карачаевска">
+                    <div class="card__info">
+                        <h2 class="card__title">Гора Эльбрус</h2>
+                        <button class="card__like" aria-label="Лайк"></button>
                     </div>
-                </div>
-                <div class="element">
-                    <img class="element__image" src="./images/kirill-pershin-1556355-unsplash.jpg" alt="Фотография Карачаевска">
-                    <div class="element__info">
-                        <p class="element__title">Домбай</p>
-                        <img class="element__like" src="./images/Vector(Stroke).svg" alt="Лайк, Сердечко">
+                </article>
+                <article class="card">
+                    <img class="card__image" src="./images/kirill-pershin-1556355-unsplash.jpg" alt="Фотография Карачаевска">
+                    <div class="card__info">
+                        <h2 class="card__title">Домбай</h2>
+                        <button class="card__like" aria-label="Лайк"></button>
                     </div>
-                </div>
-                <div class="element">
-                    <img class="element__image" src="./images/kirill-pershin-1404681-unsplash.jpg" alt="Фотография Карачаевска">
-                    <div class="element__info">
-                        <p class="element__title">Гора Эльбрус</p>
-                        <img class="element__like" src="./images/Vector(Stroke).svg" alt="Лайк, Сердечко">
+                </article>
+                <article class="card">
+                    <img class="card__image" src="./images/kirill-pershin-1404681-unsplash.jpg" alt="Фотография Карачаевска">
+                    <div class="card__info">
+                        <h2 class="card__title">Гора Эльбрус</h2>
+                        <button class="card__like" aria-label="Лайк"></button>
                     </div>
-                </div>
-                <div class="element">
-                    <img class="element__image" src="./images/kirill-pershin-1556355-unsplash.jpg" alt="Фотография Карачаевска">
-                    <div class="element__info">
-                        <p class="element__title">Домбай</p>
-                        <img class="element__like" src="./images/Vector(Stroke).svg" alt="Лайк, Сердечко">
+                </article>
+                <article class="card">
+                    <img class="card__image" src="./images/kirill-pershin-1556355-unsplash.jpg" alt="Фотография Карачаевска">
+                    <div class="card__info">
+                        <h2 class="card__title">Домбай</h2>
+                        <button class="card__like" aria-label="Лайк"></button>
                     </div>
-                </div>
-                <div class="element">
-                    <img class="element__image" src="./images/kirill-pershin-1088404-unsplash.jpg" alt="Фотография Карачаевска">
-                    <div class="element__info">
-                        <p class="element__title">Карачаево-Черкессия</p>
-                        <img class="element__like" src="./images/Vector(Stroke).svg" alt="Лайк, Сердечко">
+                </article>
+                <article class="card">
+                    <img class="card__image" src="./images/kirill-pershin-1088404-unsplash.jpg" alt="Фотография Карачаевска">
+                    <div class="card__info">
+                        <h2 class="card__title">Карачаево-Черкессия</h2>
+                        <button class="card__like" aria-label="Лайк"></button>
                     </div>
-                </div>
+                </article>
             </section>
         </main>
         <footer class="footer">
             <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
         </footer>
-        <section class="popup">
-            <form class="popup__container">
-                <img class="popup__button-close" src="./images/plus.svg" alt="">
+        <div class="popup">
+            <form class="popup__container" name="edit-profile">
+                <button class="popup__button-close" aria-label="Закрыть"></button>
                 <h2 class="popup__title">Редактировать профиль</h2>
-                <input class="popup__input-name" type="text">
-                <input class="popup__input-description" type="text">
+                <input class="popup__input popup__input_name" type="text" name="name">
+                <input class="popup__input popup__input_description" type="text" name="description">
                 <button type="submit" class="popup__button-save">Сохранить</button>
             </form>
-        </section>
+        </div>
     </div>
-    <script src="./script.js"></script> 
+    <script src="./pages/index.js"></script> 
 </body>
 </html>

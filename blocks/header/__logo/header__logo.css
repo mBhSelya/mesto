@@ -2,11 +2,21 @@
     margin-bottom: 41px;
     transition-duration: .3s;
     transition-timing-function: ease;
+    background-image: url(../../../images/logo.svg);
+    background-size: 142px 33px;
+    width: 142px;
+    height: 34px;
+    background-repeat: round;
+    cursor: pointer;
+}
+
+.header__logo:hover {
+    opacity: 0.5;
 }
 
 @media screen and (max-width: 932px) {
     .header__logo {
-        padding-left: 27px;
+        margin-left: 27px;
     }
 }
 
@@ -14,6 +24,7 @@
     .header__logo {
         width: 104px;
         height: 24px;
+        background-size: 104px 24px;
         margin-bottom: 32px;
     }    
 }

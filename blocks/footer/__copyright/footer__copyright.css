@@ -7,6 +7,7 @@
     padding: 66px 0 60px;
     transition-duration: .3s;
     transition-timing-function: ease;
+    margin: 0;
 }
 
 @media screen and (max-width: 932px) {

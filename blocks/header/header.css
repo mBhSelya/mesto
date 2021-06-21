@@ -1,14 +1,10 @@
 .header {
-    border-bottom: 1px solid #545454;
+    border-bottom: 1px solid rgba(84, 84, 84, 0.7);
     padding: 45px 0 0;
     transition-duration: .3s;
     transition-timing-function: ease;
-}
-
-@media screen and (max-width: 932px) {
-    .header {
-        
-    }
+    display: flex;
+    box-sizing: border-box;
 }
 
 @media screen and (max-width: 720px) {
