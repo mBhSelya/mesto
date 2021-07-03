@@ -27,63 +27,38 @@
                 <button class="profile__add-button" type="button" aria-label="Добавить"></button>
             </section>
             <section class="cards">
-                <article class="card">
-                    <img class="card__image" src="./images/kirill-pershin-1088404-unsplash.jpg" alt="Фотография Карачаевска">
-                    <div class="card__info">
-                        <h2 class="card__title">Карачаевск</h2>
-                        <button class="card__like" type="button" aria-label="Лайк"></button>
-                    </div>
-                </article>
-                <article class="card">
-                    <img class="card__image" src="./images/kirill-pershin-1404681-unsplash.jpg" alt="Фотография Карачаевска">
-                    <div class="card__info">
-                        <h2 class="card__title">Гора Эльбрус</h2>
-                        <button class="card__like" type="button" aria-label="Лайк"></button>
-                    </div>
-                </article>
-                <article class="card">
-                    <img class="card__image" src="./images/kirill-pershin-1556355-unsplash.jpg" alt="Фотография Карачаевска">
-                    <div class="card__info">
-                        <h2 class="card__title">Домбай</h2>
-                        <button class="card__like" type="button" aria-label="Лайк"></button>
-                    </div>
-                </article>
-                <article class="card">
-                    <img class="card__image" src="./images/kirill-pershin-1404681-unsplash.jpg" alt="Фотография Карачаевска">
-                    <div class="card__info">
-                        <h2 class="card__title">Гора Эльбрус</h2>
-                        <button class="card__like" type="button" aria-label="Лайк"></button>
-                    </div>
-                </article>
-                <article class="card">
-                    <img class="card__image" src="./images/kirill-pershin-1556355-unsplash.jpg" alt="Фотография Карачаевска">
-                    <div class="card__info">
-                        <h2 class="card__title">Домбай</h2>
-                        <button class="card__like" type="button" aria-label="Лайк"></button>
-                    </div>
-                </article>
-                <article class="card">
-                    <img class="card__image" src="./images/kirill-pershin-1088404-unsplash.jpg" alt="Фотография Карачаевска">
-                    <div class="card__info">
-                        <h2 class="card__title">Карачаево-Черкессия</h2>
-                        <button class="card__like" type="button" aria-label="Лайк"></button>
-                    </div>
-                </article>
             </section>
         </main>
         <footer class="footer">
             <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
         </footer>
-        <div class="popup">
+        <div class="popup" id="edit-profile">
             <form class="popup__container" name="edit-profile">
                 <button class="popup__button-close" type="button" aria-label="Закрыть"></button>
-                <h2 class="popup__title">Редактировать профиль</h2>
+                <h2 class="popup__title"></h2>
                 <input class="popup__input popup__input_type_name" type="text" name="name">
                 <input class="popup__input popup__input_type_description" type="text" name="description">
                 <button type="submit" class="popup__button-save">Сохранить</button>
             </form>
         </div>
+        <div class="popup" id="open-image">
+            <form class="popup__container-image" name="open-image">
+                <img class="popup__image" src="" alt="">
+                <h2 class="popup__signature"></h2>
+                <button class="popup__button-close popup__button-close_image" type="button"></button>
+            </form>
+        </div>
+        <template id="card-template">
+            <article class="card">
+                <button class="card__delete-button" type="button"></button>
+                <img class="card__image" src="" alt="">
+                <div class="card__info">
+                    <h2 class="card__title"></h2>
+                    <button class="card__like" type="button" aria-label="Лайк"></button>
+                </div>
+            </article>
+        </template>
     </div>
-    <script src="./pages/index.js"></script> 
+    <script src="./pages/index.js"></script>
 </body>
 </html>

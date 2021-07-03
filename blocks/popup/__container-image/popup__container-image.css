@@ -1,0 +1,5 @@
+.popup__container-image {
+    position: relative;
+    transition-duration: .3s;
+    transition-timing-function: ease;
+}
