@@ -17,13 +17,24 @@ const popupProfileDescription = popupElementProfile.querySelector('.popup__input
 const popupAddName = popupElementAdd.querySelector('.popup__input_add_name');
 const popupAddLink = popupElementAdd.querySelector('.popup__input_add_link');
 
+const escapeKeyCode = 'Escape';
+
 
 const openPopup = function(popup) {
     popup.classList.add('popup_opened');
+    document.addEventListener('keydown', closeByEsc);
 }
 
 const closePopup = function(popup) {
     popup.classList.remove('popup_opened');
+    document.removeEventListener('keydown', closeByEsc);
+}
+
+const closeByEsc = function(event) {
+    if (event.key === escapeKeyCode) {
+        const openedPopup = document.querySelector('.popup_opened');
+        closePopup(openedPopup);
+    }
 }
 
 const closePopupByClickOnOverlay = function(event, popup) {
