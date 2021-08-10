@@ -4,12 +4,14 @@ import Card from './Card.js';
 import FormValidator from './FormValidator.js';
 
 const popupElementProfile = document.querySelector('#edit-profile');
-const popupElementAdd = document.querySelector('#add-card')
+const popupElementAdd = document.querySelector('#add-card');
+const popupImageContainer = document.querySelector('#open-image');
+
 const editButton = document.querySelector('.profile__edit-button');
 const addButton = document.querySelector('.profile__add-button');
 
-const addCardInputName = popupElementAdd.querySelectorAll('.popup__input_add_name');
-const addCardInputLink = popupElementAdd.querySelectorAll('.popup__input_add_link');
+const addCardInputName = popupElementAdd.querySelector('.popup__input_add_name');
+const addCardInputLink = popupElementAdd.querySelector('.popup__input_add_link');
 
 const cardsContainer = document.querySelector('.cards');
 
@@ -64,8 +66,16 @@ const openProfilePopup = function() {
     openPopup(popupElementProfile);
 }
 
+const openImagePopup = function(link, name) {
+    const popupImage = popupImageContainer.querySelector('.popup__image');
+    popupImage.src = link;
+    popupImage.alt = `Фото ${name}`;
+    popupImageContainer.querySelector('.popup__signature').textContent = name;
+    openPopup(popupImageContainer);
+}
+
 const creatCard = function(obj, cardSelector) {
-    const card = new Card(obj, cardSelector);
+    const card = new Card(obj, cardSelector, openImagePopup);
     const cardElement = card.generateCard();
     return cardElement;
 }
@@ -98,14 +108,6 @@ initialCards.forEach((item) => {
 
 addForm.enableValidation();
 editForm.enableValidation();
-
-const formList = Array.from(document.querySelectorAll(validOption.formSelector));
-formList.forEach((item) => {
-    item.addEventListener('submit', (event) => {
-        event.preventDefault();
-    });
-});
-
 
 const popupAll = Array.from(document.querySelectorAll('.popup'));
 popupAll.forEach((item) => {

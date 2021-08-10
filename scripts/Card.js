@@ -1,10 +1,9 @@
-
-
 export default class Card {
-    constructor(obj, cardSelector) {
+    constructor(obj, cardSelector, openImagePopup) {
         this._image = obj.link;
         this._name = obj.name;
         this._cardSelector = cardSelector;
+        this._openImagePopup = openImagePopup;
     }
 
     _getTemplate() {
@@ -25,15 +24,6 @@ export default class Card {
         this._element.remove();
         this._element = null;
     }
-
-    _openImagePopup() {
-        const popupImageContainer = document.querySelector('#open-image');
-        const popupImage = popupImageContainer.querySelector('.popup__image');
-        popupImage.src = this._image;
-        popupImage.alt = `Фото ${this._name}`;
-        popupImageContainer.querySelector('.popup__signature').textContent = this._name;
-        popupImageContainer.classList.add('popup_opened');
-    }
     
     _setEventListeners() {
         const deleteButton = this._element.querySelector('.card__delete-button');
@@ -48,7 +38,7 @@ export default class Card {
         
         const cardImage = this._element.querySelector('.card__image');
         cardImage.addEventListener('click', () => {
-            this._openImagePopup();
+            this._openImagePopup(this._image, this._name);
         });
 	}
 

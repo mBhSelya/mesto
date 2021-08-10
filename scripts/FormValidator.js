@@ -26,8 +26,7 @@ export default class FormValidator {
     }
 
     hideErrors() {
-        const inputList = Array.from(this._formElement.querySelectorAll('.popup__input'));
-        inputList.forEach((inputElement) => {
+        this._inputList.forEach((inputElement) => {
             this._hideError(inputElement);
         })
     }
@@ -57,8 +56,13 @@ export default class FormValidator {
         }
     }
 
-    _setEventListeners() {
+    _setEventListeners(event) {
         this.toggleButtonState();
+
+        this._formElement.addEventListener('submit', (event) => {
+            event.preventDefault();
+        })
+
         this._inputList.forEach((item) => {
             item.addEventListener('input', () => {
                 this._isValid(item,);
