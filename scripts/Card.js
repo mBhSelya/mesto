@@ -1,3 +1,5 @@
+
+
 export default class Card {
     constructor(obj, cardSelector) {
         this._image = obj.link;

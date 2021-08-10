@@ -1,3 +1,5 @@
+import { initialCards } from './initial-cards.js';
+import { validOption } from './validOption.js';
 import Card from './Card.js';
 import FormValidator from './FormValidator.js';
 

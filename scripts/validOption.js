@@ -1,4 +1,4 @@
-const validOption = {
+export const validOption = {
     formSelector: '.popup__container',
     inputSelector: '.popup__input',
     submitButtonSelector: '.popup__button-save',
