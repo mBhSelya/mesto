@@ -6,6 +6,9 @@ const popupElementAdd = document.querySelector('#add-card')
 const editButton = document.querySelector('.profile__edit-button');
 const addButton = document.querySelector('.profile__add-button');
 
+const addCardInputName = popupElementAdd.querySelectorAll('.popup__input_add_name');
+const addCardInputLink = popupElementAdd.querySelectorAll('.popup__input_add_link');
+
 const cardsContainer = document.querySelector('.cards');
 
 const profileName = document.querySelector('.profile__name');
@@ -14,6 +17,9 @@ const popupProfileName = popupElementProfile.querySelector('.popup__input_profil
 const popupProfileDescription = popupElementProfile.querySelector('.popup__input_profile_description');
 
 const escapeKeyCode = 'Escape';
+
+const editForm = new FormValidator(validOption, popupElementProfile);
+const addForm = new FormValidator(validOption, popupElementAdd);
 
 
 const openPopup = function(popup) {
@@ -42,18 +48,15 @@ const closePopupByClickOnOverlay = function(event, popup) {
 
 const openAddPopup = function() {
     document.forms.addCard.reset();
-    const inputList = Array.from(document.forms.addCard.querySelectorAll('.popup__input'));
-    inputList.forEach((inputElement) => {
-        new FormValidator(validOption, popupElementAdd)._hideError(inputElement);
-    })
+    addForm.toggleButtonState();
+    addForm.hideErrors();
     openPopup(popupElementAdd);
 }
 
 const openProfilePopup = function() {
-    const inputList = Array.from(document.forms.editProfile.querySelectorAll('.popup__input'));
-    inputList.forEach((inputElement) => {
-        new FormValidator(validOption, popupElementProfile)._hideError(inputElement);
-    })
+    document.forms.editProfile.reset();
+    editForm.toggleButtonState();
+    editForm.hideErrors();
     popupProfileName.value = profileName.textContent;
     popupProfileDescription.value = profileDescription.textContent;
     openPopup(popupElementProfile);
@@ -72,22 +75,18 @@ function handleFormSubmit (event, popup) {
 
 const handleCardFormSubmit = function(event, popup) {
     const addCard = {
-        name: popupElementAdd.querySelector('.popup__input_add_name').value, 
-        link: popupElementAdd.querySelector('.popup__input_add_link').value
+        name: addCardInputName.value, 
+        link: addCardInputLink.value
     }
     cardsContainer.prepend(creatCard(addCard, '#card-template'));
     handleFormSubmit(event, popup);
     document.forms.addCard.reset();
-    new FormValidator(validOption, popup)._toggleButtonState();
 }
 
 const handleProfileFormSubmit = function(event, popup) {
     profileName.textContent = popupProfileName.value;
     profileDescription.textContent = popupProfileDescription.value;
     handleFormSubmit(event, popup);
-    const buttonElement = popup.querySelector('.popup__button-save');
-    buttonElement.classList.add('popup__button-save_inactive');
-    buttonElement.setAttribute("disabled", "true");
 }
 
 initialCards.forEach((item) => {
@@ -95,19 +94,22 @@ initialCards.forEach((item) => {
 	cardsContainer.append(creatCard(item, '#card-template'));
 });
 
+addForm.enableValidation();
+editForm.enableValidation();
+
 const formList = Array.from(document.querySelectorAll(validOption.formSelector));
 formList.forEach((item) => {
     item.addEventListener('submit', (event) => {
         event.preventDefault();
     });
-    new FormValidator(validOption, item).enableValidation();
 });
+
 
 const popupAll = Array.from(document.querySelectorAll('.popup'));
 popupAll.forEach((item) => {
     const closeButton = item.querySelector('.popup__button-close');
     closeButton.addEventListener('click', () => {
-        closePopup(item);
+        closePopup(item); 
     });
     item.addEventListener('click',(event) =>{
         closePopupByClickOnOverlay(event, item);  
@@ -116,9 +118,7 @@ popupAll.forEach((item) => {
 
 editButton.addEventListener('click', openProfilePopup);
 addButton.addEventListener('click', openAddPopup);
-document.addEventListener('keydown', (event) => {
-    closeByEsc(event)
-});
+
 popupElementProfile.addEventListener('submit', (event) => {
     handleProfileFormSubmit(event, popupElementProfile);
 });

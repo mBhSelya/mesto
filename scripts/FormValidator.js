@@ -1,14 +1,4 @@
 export default class FormValidator {
-    _formElement
-    _formSelector
-    _inputSelector
-    _submitButtonSelector
-    _inactiveButtonClass
-    _inputErrorClass
-    _errorClass
-    _formSet
-    _inputList
-
     constructor(obj, formElement) {
         this._formElement = formElement;
         this._formSelector = obj.formSelector;
@@ -35,6 +25,13 @@ export default class FormValidator {
         errorElement.textContent = '';
     }
 
+    hideErrors() {
+        const inputList = Array.from(this._formElement.querySelectorAll('.popup__input'));
+        inputList.forEach((inputElement) => {
+            this._hideError(inputElement);
+        })
+    }
+
     _isValid(inputElement) {
         if (!inputElement.validity.valid) {
             this._showError(inputElement, inputElement.validationMessage);
@@ -49,7 +46,7 @@ export default class FormValidator {
         })
     }
 
-    _toggleButtonState() {
+    toggleButtonState() {
         const buttonElement = this._formElement.querySelector(this._submitButtonSelector);
         if (this._hasInvalidInput()) {
             buttonElement.classList.add(this._inactiveButtonClass);
@@ -61,11 +58,11 @@ export default class FormValidator {
     }
 
     _setEventListeners() {
-        this._toggleButtonState();
+        this.toggleButtonState();
         this._inputList.forEach((item) => {
             item.addEventListener('input', () => {
                 this._isValid(item,);
-                this._toggleButtonState();
+                this.toggleButtonState();
             });
         });
     }
