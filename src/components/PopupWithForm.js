@@ -17,19 +17,14 @@ export default class PopupWithForm extends Popup {
 
     setEventListeners() {
         super.setEventListeners();
-        this._popup.addEventListener('submit', (event) => {
-            this._submit(event);
+        this._popup.addEventListener('submit', () => {
+            this._submit(this._getInputValues());
         });
     }
 
     close() {
         super.close();
-        const nameForm = this._popup.querySelector('.popup__container').name;
-        if (nameForm === 'editProfile') {
-            document.forms.editProfile.reset();
-        } else if (nameForm === 'addForm') {
-            document.forms.addCard.reset();
-        }
+        this._popup.querySelector('.popup__container').reset();
         this._popup.removeEventListener('submit', (event) => {
             this._submit(event);
         })
