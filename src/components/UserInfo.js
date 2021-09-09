@@ -12,8 +12,8 @@ export default class UserInfo {
         return profileObj;
     }
 
-    setUserInfo({nickname, description}) {
-        this._nickname.textContent = nickname;
-        this._description.textContent = description;
+    setUserInfo(info) {
+        this._nickname.textContent = info.name;
+        this._description.textContent = info.about;
     }
 }

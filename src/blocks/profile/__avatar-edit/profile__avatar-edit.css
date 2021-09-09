@@ -1,0 +1,28 @@
+.profile__avatar-edit {
+    border-radius: 50%;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    height: 120px;
+    cursor: pointer;
+}
+
+.profile__avatar-edit::before {
+    background-image: url(../../../images/Vector.svg);
+    content: " ";
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 26px;
+    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    border-radius: 47%;
+    transition-duration: .3s;
+    transition-timing-function: ease;
+}
+
+.profile__avatar-edit:hover::before {
+    opacity: 1;
+}

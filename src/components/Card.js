@@ -1,9 +1,14 @@
 export default class Card {
-    constructor(obj, cardSelector, handleCardClick) {
+    constructor(obj, ID, cardSelector, {handleCardClick, handleDeleteCard, handleLikeCard}) {
         this._image = obj.link;
         this._name = obj.name;
         this._cardSelector = cardSelector;
         this._handleCardClick = handleCardClick;
+        this._handleDeleteCard = handleDeleteCard;
+        this._handleLikeCard = handleLikeCard;
+        this._owner = obj.owner;
+        this._likes = obj.likes;
+        this._userID = ID;
     }
 
     _getTemplate() {
@@ -16,11 +21,23 @@ export default class Card {
         return cardElement;
     }
 
-    _likeCard() {
-        this._element.querySelector('.card__like').classList.toggle('card__like_active');
+    countLikes(count) {
+        this._element.querySelector('.card__like-counter').textContent = count;
     }
 
-    _deleteCard() {
+    likeCard(trueLike, falseLike) {
+        const likeIcon = this._element.querySelector('.card__like-icon');
+        const like = likeIcon.classList.contains('card__like-icon_active');
+        if (like) {
+            falseLike();
+            likeIcon.classList.remove('card__like-icon_active');
+        } else {
+            trueLike();
+            likeIcon.classList.add('card__like-icon_active');
+        }
+    }
+
+    deleteCard() {
         this._element.remove();
         this._element = null;
     }
@@ -28,12 +45,12 @@ export default class Card {
     _setEventListeners() {
         const deleteButton = this._element.querySelector('.card__delete-button');
         deleteButton.addEventListener('click', () => {
-            this._deleteCard();
+            this._handleDeleteCard();
         });
 
         const cardLike = this._element.querySelector('.card__like');
         cardLike.addEventListener('click', () => {
-            this._likeCard();
+            this._handleLikeCard();
         });
         
         const cardImage = this._element.querySelector('.card__image');
@@ -46,11 +63,25 @@ export default class Card {
         this._element = this._getTemplate();
         this._setEventListeners();
         
+
+        if (this._owner._id !== this._userID) {
+            const deleteButton = this._element.querySelector('.card__delete-button');
+            deleteButton.classList.add('card__delete-button_owner');
+        }
+
+
+        this._likes.forEach((item) => {
+            if (item._id === this._userID) {
+                this._element.querySelector('.card__like-icon').classList.add('card__like-icon_active');
+            }
+        })
+        
         this._element.querySelector('.card__image').src = this._image;
         this._element.querySelector('.card__image').alt = `Фото ${this._name}`;
         
         this._element.querySelector('.card__title').textContent = this._name;
-    
+        this._element.querySelector('.card__like-counter').textContent = this._likes.length;
+
         return this._element;
     }
 }

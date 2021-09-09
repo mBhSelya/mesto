@@ -1,0 +1,14 @@
+.card__like-icon {
+    transition-timing-function: ease;
+    transition-duration: .3s;
+    cursor: pointer;
+    background-image: url(../../../images/LIKE.svg);
+    border: 0;
+    width: 22px;
+    height: 19px;
+    background-color: initial;
+}
+
+.card__like-icon:hover {
+    opacity: 0.5;
+}
