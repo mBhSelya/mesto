@@ -9,6 +9,7 @@ export default class Card {
         this._owner = obj.owner;
         this._likes = obj.likes;
         this._userID = ID;
+
     }
 
     _getTemplate() {
@@ -22,7 +23,7 @@ export default class Card {
     }
 
     countLikes(count) {
-        this._element.querySelector('.card__like-counter').textContent = count;
+        this._countLikes.textContent = count;
     }
 
     likeCard(trueLike, falseLike) {
@@ -57,10 +58,13 @@ export default class Card {
         cardImage.addEventListener('click', () => {
             this._handleCardClick(this._image, this._name);
         });
+        
 	}
 
     generateCard() {
         this._element = this._getTemplate();
+        this._countLikes = this._element.querySelector('.card__like-counter');
+        this._cardImage = this._element.querySelector('.card__image');
         this._setEventListeners();
         
 
@@ -76,8 +80,8 @@ export default class Card {
             }
         })
         
-        this._element.querySelector('.card__image').src = this._image;
-        this._element.querySelector('.card__image').alt = `Фото ${this._name}`;
+        this._cardImage.src = this._image;
+        this._cardImage.alt = `Фото ${this._name}`;
         
         this._element.querySelector('.card__title').textContent = this._name;
         this._element.querySelector('.card__like-counter').textContent = this._likes.length;
