@@ -13,18 +13,14 @@ export default class Api {
 
     getInfoUser() {
         return fetch(`${this._baseUrl}users/me`, {
-            headers: {
-                authorization: '2808c73a-a30b-458f-af2d-b76704edccd0'
-            }
+            headers: this._headers
         })
         .then(this._checkResponse)
     }
 
     getInitialCards() {
         return fetch(`${this._baseUrl}cards`, {
-            headers: {
-                authorization: '2808c73a-a30b-458f-af2d-b76704edccd0'
-            }
+            headers: this._headers
         })
         .then(this._checkResponse)
     }

@@ -56,10 +56,10 @@ const cardsList = new Section({
 }, '.cards');
 
 Promise.all([api.getInfoUser(), api.getInitialCards()])
-    .then((res) => {
-        userInfo.setUserInfo(res[0]);
-        userId = res[0]._id;
-        cardsList.renderItems(res[1]);
+    .then(({userData, initialCards}) => {
+        userInfo.setUserInfo(userData);
+        userId = userData._id;
+        cardsList.renderItems(initialCards);
     })
     .catch((err) => {
         console.log(err);
