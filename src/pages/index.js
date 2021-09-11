@@ -56,7 +56,7 @@ const cardsList = new Section({
 }, '.cards');
 
 Promise.all([api.getInfoUser(), api.getInitialCards()])
-    .then(({userData, initialCards}) => {
+    .then(([userData, initialCards]) => {
         userInfo.setUserInfo(userData);
         userId = userData._id;
         cardsList.renderItems(initialCards);
